@@ -70,5 +70,21 @@ public class StringUtil {
 		return s1+s2;
 	}
 	
+	//判断是否是邮箱
+	public static boolean isMail(String src) {
+		String reg ="\\w+\\@\\w+\\.\\W+"; 
+		return src.matches(reg);
+	}
 	
+	//判断是否是手机号
+	public static boolean isPhone(String src) {
+		String reg = "^1[3|4|5|7|8]\\d{9}$";
+		return src.matches(reg);
+	}
+	
+	//判断字符串是否是数字  考虑整数，小数，负数
+	public static boolean isNumber(String src) {
+		String reg ="^(-)?[0-9]+(\\.[0-9]+)?$";
+		return src.matches(reg);
+	}
 }
